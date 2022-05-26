@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><br><br>
+<div class="container text-light">
+    <div class="d-flex  align-items-center  justify-content-center mb-3">
+      <h1> user's Index</h1>
+    </div>
+  <table class="table  table-hover">
+    <thead>
+    <tr>
+      <th scope="col">User Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Photo Thumbnail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user|%>
+    <tr> 
+      <th scope="row"><%=user.name%></th>
+      <td><%=user.email%></td>
+      <% if !user.picture.file.nil? %>
+        <td><%= image_tag user.picture.thumb.url %></td>
+      <% end %>
+      <td><button type="button" class="btn btn-link"><%= link_to "Show", user_path(user), class:"btn btn-success", method: :get %></button>
+        <button type="button" class="btn btn-link"><%= link_to " Edit", edit_user_path(user), class:"btn btn-warning", method: :get %></button>
+        <button type="button" class="btn btn-link"><%= button_to " Destroy", user_path(user), class:"btn btn-danger", method: :delete %></button>
+      </td>
+    </tr>
+    <%end%> 
+  </tbody>
+  </table><br>                                      
+    <button type="button " class="btn btn-link"><%= link_to "Add new user", new_user_path, class:"btn btn-secondary", method: :get %></button> 
+</div>
+</body>
+</html>
