@@ -5,6 +5,7 @@ require "rails/all"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+# Dotenv::Railtie.load
 
 module RailsPractical3
   class Application < Rails::Application
@@ -19,5 +20,6 @@ module RailsPractical3
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     require 'carrierwave/orm/activerecord'
+    require 'dotenv/load'
   end
 end

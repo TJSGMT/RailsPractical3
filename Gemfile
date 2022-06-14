@@ -11,6 +11,8 @@ gem "sprockets-rails"
 gem 'carrierwave', '~> 2.0'
 gem "mini_magick"
 gem "pry"
+gem "dotenv"
+
 
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
@@ -18,7 +20,7 @@ gem "sqlite3", "~> 1.4"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
-# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
+# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]to
 gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
